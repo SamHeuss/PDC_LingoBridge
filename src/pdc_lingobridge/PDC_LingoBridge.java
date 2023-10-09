@@ -14,6 +14,7 @@ public class PDC_LingoBridge {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("your mum");
         // TODO code application logic here
     }
     
