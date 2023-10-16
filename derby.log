@@ -1,0 +1,31 @@
+Tue Oct 17 10:19:13 NZDT 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Oct 17 10:20:07 NZDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018b-3a5b-71bd-ffff9bdd526c 
+on database directory C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
+Loaded from file:/C:/Users/celin/OneDrive/Documents/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11+28
+user.dir=C:\Users\celin\OneDrive\Documents\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Oct 17 10:20:07 NZDT 2023:
+Shutting down instance a816c00e-018b-3a5b-71bd-ffff9bdd526c on database directory C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
+Tue Oct 17 10:20:07 NZDT 2023 Thread[DRDAConnThread_3,5,main] (DATABASE = LingoBridge), (DRDAID = {2}), Database 'LingoBridge' shutdown.
+----------------------------------------------------------------
+Tue Oct 17 10:21:03 NZDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 6ede40af-018b-3a5b-71bd-ffff9bdd526c 
+on database directory C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
+Loaded from file:/C:/Users/celin/OneDrive/Documents/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11+28
+user.dir=C:\Users\celin\OneDrive\Documents\db-derby-10.14.2.0-bin
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge
+Database Class Loader started - derby.database.classpath=''
