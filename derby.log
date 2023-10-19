@@ -1,14 +1,14 @@
-Thu Oct 19 11:06:20 NZDT 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Thu Oct 19 13:13:01 NZDT 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Thu Oct 19 11:06:20 NZDT 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018b-44d3-4c40-ffff9bdd526c 
-on database directory C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
-Loaded from file:/C:/Users/celin/OneDrive/Documents/db-derby-10.14.2.0-bin/lib/derby.jar
+Thu Oct 19 13:13:01 NZDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018b-4547-4536-ffffedaed285 
+on database directory C:\Users\sammy\OneDrive\Documents\AUT\2023\Sem 2\COMP603\Assignment 2\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2cdf8d8a 
+Loaded from file:/C:/Users/sammy/db-derby-10.14.2.0-bin/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=11+28
-user.dir=C:\Users\celin\OneDrive\Documents\db-derby-10.14.2.0-bin
-os.name=Windows 10
+java.runtime.version=11.0.19+9-LTS-224
+user.dir=C:\Users\sammy\db-derby-10.14.2.0-bin\db-derby-10.14.2.0-bin
+os.name=Windows 11
 os.arch=amd64
 os.version=10.0
-derby.system.home=C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge
+derby.system.home=C:\Users\sammy\OneDrive\Documents\AUT\2023\Sem 2\COMP603\Assignment 2\PDC_LingoBridge
 Database Class Loader started - derby.database.classpath=''
