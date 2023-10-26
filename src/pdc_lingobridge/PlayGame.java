@@ -28,50 +28,56 @@ public class PlayGame extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        learnButton = new javax.swing.JRadioButton();
+        quizButton = new javax.swing.JRadioButton();
         title = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        suggestButton = new javax.swing.JRadioButton();
+        back = new javax.swing.JButton();
+        confirmButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(203, 226, 247));
 
-        jRadioButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jRadioButton1.setText("Learning Mode");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        learnButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        learnButton.setText("Learning Mode");
+        learnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                learnButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jRadioButton2.setText("Quiz Mode");
+        quizButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        quizButton.setText("Quiz Mode");
 
         title.setBackground(new java.awt.Color(255, 255, 255));
         title.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         title.setText("Lingo Bridge");
 
-        jRadioButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jRadioButton3.setText("Suggest Deck");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        suggestButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        suggestButton.setText("Suggest Deck");
+        suggestButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                suggestButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(204, 226, 165));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jButton1.setText("Confirm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        back.setBackground(new java.awt.Color(213, 137, 111));
+        back.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        back.setText("Back");
+        back.setActionCommand("back");
+        back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(213, 137, 111));
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton2.setText("Back");
+        confirmButton1.setBackground(new java.awt.Color(204, 226, 165));
+        confirmButton1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        confirmButton1.setText("Confirm");
+        confirmButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,52 +91,59 @@ public class PlayGame extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(307, 307, 307)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3))))
+                            .addComponent(quizButton)
+                            .addComponent(learnButton)
+                            .addComponent(suggestButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(239, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(285, 285, 285))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(16, 16, 16))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(301, Short.MAX_VALUE)
+                    .addComponent(confirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(275, 275, 275)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jButton2)
-                .addGap(70, 70, 70)
+                .addGap(15, 15, 15)
+                .addComponent(back)
+                .addGap(62, 62, 62)
                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(jRadioButton1)
+                .addComponent(learnButton)
                 .addGap(27, 27, 27)
-                .addComponent(jRadioButton2)
+                .addComponent(quizButton)
                 .addGap(25, 25, 25)
-                .addComponent(jRadioButton3)
-                .addGap(43, 43, 43)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addComponent(suggestButton)
+                .addContainerGap(289, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(399, Short.MAX_VALUE)
+                    .addComponent(confirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(183, 183, 183)))
         );
     }// </editor-fold>//GEN-END:initComponents
           
     
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void learnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnButtonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_learnButtonActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void suggestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suggestButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_suggestButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        firePropertyChange("backToHome", false, true);
+                
+        LingoBridge.getInstance().setMainPanel(new Page());
+    }//GEN-LAST:event_backActionPerformed
+
+    private void confirmButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_confirmButton1ActionPerformed
 
      public static void main(String[] args) {
         JFrame frame = new JFrame();
@@ -141,11 +154,11 @@ public class PlayGame extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JButton back;
+    private javax.swing.JButton confirmButton1;
+    private javax.swing.JRadioButton learnButton;
+    private javax.swing.JRadioButton quizButton;
+    private javax.swing.JRadioButton suggestButton;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
