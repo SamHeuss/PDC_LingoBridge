@@ -61,6 +61,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBManager {
     private static final String DB_URL = "jdbc:derby://localhost:1527/LingoBridge";
@@ -120,7 +122,6 @@ public class DBManager {
         return false;
     }
 
-
     public boolean insertNewUser(String username) {
         if (isUsernameAvailable(username)) {
             String query = "INSERT INTO USERS (USERNAME, SCORE) VALUES (?, 0)";
@@ -133,4 +134,23 @@ public class DBManager {
         }
         return false;
     }
+    
+    // inside DBManager class
+
+    public List<UserManagement> getAllUsers() {
+        List<UserManagement> userList = new ArrayList<>();
+        String query = "SELECT USERNAME, SCORE FROM USERS ORDER BY SCORE DESC";
+        try ( PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String username = resultSet.getString("USERNAME");
+                int score = resultSet.getInt("SCORE");
+                userList.add(new UserManagement(username, score));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
+    }
+
 }
