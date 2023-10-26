@@ -36,9 +36,9 @@ public class Instructions extends JPanel {
 
         layout.setHorizontalGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(Alignment.LEADING)
+                .addComponent(backButton))
                 .addComponent(instructionsLabel)
                 // Add more components for your instructions page
-                .addComponent(backButton))
         );
 
         layout.setVerticalGroup(layout.createSequentialGroup()

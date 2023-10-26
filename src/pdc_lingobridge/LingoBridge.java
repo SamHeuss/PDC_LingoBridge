@@ -106,6 +106,7 @@ public class LingoBridge extends JFrame {
 
     public void leaderButtonActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
-        System.out.println("LEADERBOARD");
+        LeaderBoard lbPanel = new LeaderBoard(dbManager);
+        setMainPanel(lbPanel);
     }
 }
