@@ -1,45 +1,55 @@
 package pdc_lingobridge;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.GroupLayout.Alignment;
+import static javax.swing.LayoutStyle.ComponentPlacement.RELATED;
 
-public class Instructions extends javax.swing.JFrame {
-    
-    // Add components for displaying instructions
-    private JLabel instructionsLabel;
-    private JButton backButton;
-
+public class Instructions extends JPanel {
     public Instructions() {
         initComponents();
     }
-
+    
     private void initComponents() {
-        // Initialize and arrange components
-        
-        instructionsLabel = new JLabel("Here are the instructions on how to play the game...");
-        backButton = new JButton("Back");
-        
-        // Configure the layout, fonts, and other properties as needed
+        // Add components for your instructions page, e.g., labels, text, etc.
+        // Make sure to include a "Back" button to return to the homepage.
 
-        // Implement an ActionListener for the Back button
-        backButton.addActionListener(e -> {
-            this.dispose(); // Close the HowToPlayPage
-            LingoBridge_GUI mainPage = new LingoBridge_GUI();
-            mainPage.setVisible(true); // Reopen the main page
+        JButton backButton = new JButton("Back");
+        backButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                firePropertyChange("backToHome", false, true);
+                
+                LingoBridge.getInstance().setMainPanel(new Page());
+            }
         });
-        
-        setSize(800, 600);
-        setTitle("How to Play");
-        
-        // Add components to the frame
-        // (You can use GroupLayout, BorderLayout, or another layout manager of your choice)
 
-        // Set the frame properties (size, title, etc.)
-    }
+        JLabel instructionsLabel = new JLabel("Instructions go here...");
+        // Add more labels, text, or components for your instructions.
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Instructions howTo = new Instructions();
-            howTo.setVisible(true);
-        });
+        GroupLayout layout = new GroupLayout(this);
+        this.setLayout(layout);
+        //getContentPane().setLayout(layout);
+
+        layout.setAutoCreateGaps(true);
+        layout.setAutoCreateContainerGaps(true);
+
+        layout.setHorizontalGroup(layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(Alignment.LEADING)
+                .addComponent(instructionsLabel)
+                // Add more components for your instructions page
+                .addComponent(backButton))
+        );
+
+        layout.setVerticalGroup(layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(Alignment.BASELINE)
+                .addComponent(instructionsLabel))
+            .addPreferredGap(RELATED)
+            // Add more components for your instructions page
+            .addGroup(layout.createParallelGroup(Alignment.BASELINE)
+                .addComponent(backButton))
+        );
+        
+        //pack();
     }
 }

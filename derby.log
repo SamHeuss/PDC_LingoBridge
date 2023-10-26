@@ -1,7 +1,7 @@
-Thu Oct 19 11:06:20 NZDT 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Wed Oct 25 18:46:18 NZDT 2023 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Thu Oct 19 11:06:20 NZDT 2023:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018b-44d3-4c40-ffff9bdd526c 
+Wed Oct 25 18:46:25 NZDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-018b-655e-9232-ffff9bdd526c 
 on database directory C:\Users\celin\OneDrive\Documents\NetBeansProjects\PDC_LingoBridge\LingoBridge with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
 Loaded from file:/C:/Users/celin/OneDrive/Documents/db-derby-10.14.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
