@@ -17,6 +17,7 @@ public class PlayGame extends javax.swing.JPanel {
      */
     public PlayGame() {
         initComponents();
+        setupActionListeners();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,37 +29,19 @@ public class PlayGame extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        learnButton = new javax.swing.JRadioButton();
-        quizButton = new javax.swing.JRadioButton();
         title = new javax.swing.JLabel();
-        suggestButton = new javax.swing.JRadioButton();
         back = new javax.swing.JButton();
-        confirmButton1 = new javax.swing.JButton();
+        suggestDeckButton = new javax.swing.JButton();
+        quizButton = new javax.swing.JButton();
+        learnButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(203, 226, 247));
-
-        learnButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        learnButton.setText("Learning Mode");
-        learnButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                learnButtonActionPerformed(evt);
-            }
-        });
-
-        quizButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        quizButton.setText("Quiz Mode");
+        setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(750, 650));
 
         title.setBackground(new java.awt.Color(255, 255, 255));
         title.setFont(new java.awt.Font("MV Boli", 1, 48)); // NOI18N
         title.setText("Lingo Bridge");
-
-        suggestButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        suggestButton.setText("Suggest Deck");
-        suggestButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                suggestButtonActionPerformed(evt);
-            }
-        });
 
         back.setBackground(new java.awt.Color(213, 137, 111));
         back.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -70,12 +53,31 @@ public class PlayGame extends javax.swing.JPanel {
             }
         });
 
-        confirmButton1.setBackground(new java.awt.Color(204, 226, 165));
-        confirmButton1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        confirmButton1.setText("Confirm");
-        confirmButton1.addActionListener(new java.awt.event.ActionListener() {
+        suggestDeckButton.setBackground(new java.awt.Color(204, 226, 165));
+        suggestDeckButton.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        suggestDeckButton.setText("Suggest Deck");
+        suggestDeckButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmButton1ActionPerformed(evt);
+                suggestDeckButtonActionPerformed(evt);
+            }
+        });
+
+        quizButton.setBackground(new java.awt.Color(204, 226, 165));
+        quizButton.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        quizButton.setText("Quiz Mode");
+        quizButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizButtonActionPerformed(evt);
+            }
+        });
+
+        learnButton.setBackground(new java.awt.Color(204, 226, 165));
+        learnButton.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        learnButton.setText("Learning Mode");
+        learnButton.setName(""); // NOI18N
+        learnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnButtonActionPerformed(evt);
             }
         });
 
@@ -86,23 +88,17 @@ public class PlayGame extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(title))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(307, 307, 307)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(quizButton)
-                            .addComponent(learnButton)
-                            .addComponent(suggestButton)))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(239, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(301, Short.MAX_VALUE)
-                    .addComponent(confirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(275, 275, 275)))
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quizButton, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(suggestDeckButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(learnButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,41 +107,81 @@ public class PlayGame extends javax.swing.JPanel {
                 .addComponent(back)
                 .addGap(62, 62, 62)
                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(learnButton)
-                .addGap(27, 27, 27)
-                .addComponent(quizButton)
-                .addGap(25, 25, 25)
-                .addComponent(suggestButton)
-                .addContainerGap(289, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(399, Short.MAX_VALUE)
-                    .addComponent(confirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(183, 183, 183)))
+                .addGap(54, 54, 54)
+                .addComponent(learnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(quizButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(suggestDeckButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(248, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
           
+    private void setupActionListeners() {
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
+        suggestDeckButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suggestDeckButtonActionPerformed(evt);
+            }
+        });
+
+        quizButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quizButtonActionPerformed(evt);
+            }
+        });
+
+        learnButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                learnButtonActionPerformed(evt);
+            }
+        });
+    }
     
-    private void learnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_learnButtonActionPerformed
-
-    private void suggestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suggestButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_suggestButtonActionPerformed
-
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         firePropertyChange("backToHome", false, true);
                 
         LingoBridge.getInstance().setMainPanel(new Page());
     }//GEN-LAST:event_backActionPerformed
 
-    private void confirmButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmButton1ActionPerformed
+    private void suggestDeckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suggestDeckButtonActionPerformed
+        LingoBridge.getInstance().setMainPanel(new SuggestDeck());
+    }//GEN-LAST:event_suggestDeckButtonActionPerformed
 
-     public static void main(String[] args) {
+    private void quizButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quizButtonActionPerformed
+        LingoBridge.getInstance().setMainPanel(new SelectDeck("quiz"));
+        //navigateToMode("quiz");
+         
+    }//GEN-LAST:event_quizButtonActionPerformed
+
+    private void learnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_learnButtonActionPerformed
+        LingoBridge.getInstance().setMainPanel(new SelectDeck("learn"));
+        //navigateToMode("learn");
+         
+    }//GEN-LAST:event_learnButtonActionPerformed
+   
+//    private String selectDeck() {
+//    // TODO: Open a deck selection interface and return the selected deck.
+//    // If user cancels, return null.
+//    return null; // Placeholder
+//    }
+    
+    /*
+    private void navigateToMode(String mode) {
+        if (mode.equals("learn")) {
+            LingoBridge.getInstance().setMainPanel(new LearningMode());
+        } else if (mode.equals("quiz")) {
+            LingoBridge.getInstance().setMainPanel(new QuizMode()); 
+        }
+    }
+*/
+    
+    public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(new PlayGame());
@@ -155,10 +191,9 @@ public class PlayGame extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JButton confirmButton1;
-    private javax.swing.JRadioButton learnButton;
-    private javax.swing.JRadioButton quizButton;
-    private javax.swing.JRadioButton suggestButton;
+    private javax.swing.JButton learnButton;
+    private javax.swing.JButton quizButton;
+    private javax.swing.JButton suggestDeckButton;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

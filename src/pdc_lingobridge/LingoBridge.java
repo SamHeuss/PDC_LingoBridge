@@ -4,9 +4,12 @@
  */
 package pdc_lingobridge;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -18,7 +21,7 @@ public class LingoBridge extends JFrame {
 
     private final DBManager dbManager;
     private static LingoBridge instance;
-    
+
     public static LingoBridge getInstance() {
         return instance;
     }
@@ -74,6 +77,51 @@ public class LingoBridge extends JFrame {
         });
     }
 
+//    public void confirmButtonActionPerformed(JTextField usernameInput, ActionEvent evt) {
+//        // TODO add your handling code here:
+//        String enteredUsername = usernameInput.getText();
+//        if (enteredUsername.isEmpty()) {
+//            System.out.println("Username is empty.");
+//            // Handle empty username (you can show an error message)
+//        } else {
+//            if(dbManager.usernameExists(enteredUsername)){
+//                System.out.println("Username is occupied.");
+//                
+//                usernameInput.setBackground(Color.RED);
+//                JOptionPane.showMessageDialog(this, "User record found: "+ enteredUsername);
+//                
+//                String[] options = {"Override Record", "Enter New Username"};
+//                int choice = JOptionPane.showOptionDialog(null, "Choose an option", "Confirm", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+//
+//                if (choice == 0) {  // Override Record
+//                    // Here you might want to handle overriding the record or just proceed to the PlayGame panel
+//                    setMainPanel(new PlayGame());
+//                } else {
+//                    // Reset background color and let the user enter a new username
+//                    usernameInput.setBackground(Color.WHITE);
+//                }
+//            } else{
+//                if (dbManager.insertNewUser(enteredUsername)) {
+//                    System.out.println("User successfully inserted into the database.");
+//                    setMainPanel(new PlayGame());
+//                } else {
+//                    // Handle insertion error
+//                    System.out.println("There was an error inserting the user.");
+//                } 
+//            }
+//            // DBManager dbManager = new DBManager();
+//
+//            if (dbManager.insertNewUser(enteredUsername)) {
+//                System.out.println("User successfully inserted into the database.");
+//                // cardLayout.show(cards, "playGame");
+//            } else {
+//                // Username is not available, show an error message
+//                System.out.println("Username is not available.");
+//            }
+//
+//            setMainPanel(new PlayGame());
+//        }
+//    }
     public void confirmButtonActionPerformed(JTextField usernameInput, ActionEvent evt) {
         // TODO add your handling code here:
         String enteredUsername = usernameInput.getText();
@@ -81,17 +129,33 @@ public class LingoBridge extends JFrame {
             System.out.println("Username is empty.");
             // Handle empty username (you can show an error message)
         } else {
-            // DBManager dbManager = new DBManager();
+            if (dbManager.usernameExists(enteredUsername)) {
+                System.out.println("Username is occupied.");
 
-            if (dbManager.insertNewUser(enteredUsername)) {
-                System.out.println("User successfully inserted into the database.");
-                // cardLayout.show(cards, "playGame");
+                usernameInput.setBackground(Color.RED);
+                JOptionPane.showMessageDialog(this, "User record found: " + enteredUsername);
+
+                String[] options = {"Override Record", "Enter New Username"};
+                int choice = JOptionPane.showOptionDialog(null, "Choose an option", "Confirm", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+                if (choice == 0) {  // Override Record
+                    // Here you might want to handle overriding the record or just proceed to the PlayGame panel
+                    setMainPanel(new PlayGame());
+                } else {
+                    // Reset background color and let the user enter a new username
+                    usernameInput.setBackground(Color.WHITE);
+                    return; // Exit the method early to avoid the code below
+                }
             } else {
-                // Username is not available, show an error message
-                System.out.println("Username is not available.");
+                if (dbManager.insertNewUser(enteredUsername)) {
+                    System.out.println("User successfully inserted into the database.");
+                    setMainPanel(new PlayGame());
+                } else {
+                    // Handle insertion error
+                    System.out.println("There was an error inserting the user.");
+                    return; // Exit the method early to avoid the code below
+                }
             }
-
-            setMainPanel(new PlayGame());
         }
     }
 
@@ -101,7 +165,6 @@ public class LingoBridge extends JFrame {
 
         // Show or switch to the instructions page
 //        cardLayout.show(cards, "instructions");
-
     }
 
     public void leaderButtonActionPerformed(ActionEvent evt) {

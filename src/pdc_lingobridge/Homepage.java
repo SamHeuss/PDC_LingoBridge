@@ -20,10 +20,11 @@ public class Homepage extends JPanel {
     private JLabel title;
     private JLabel titleEnterUser;
     private JTextField usernameInput;
-    private DeckSelectionTest deckSelectionPanel; // The deck selection panel
+    //private DeckSelectionTest deckSelectionPanel; // The deck selection panel
 
     public Homepage() {
         this.initComponents();
+        this.setPreferredSize(new Dimension(800, 900));
     }
 
     private void initComponents() {
@@ -34,7 +35,7 @@ public class Homepage extends JPanel {
         titleEnterUser = new JLabel();
         instructionButton = new JButton();
         leaderButton = new JButton();
-        deckSelectionPanel = new DeckSelectionTest(); // Initialize the deck selection panel
+        //deckSelectionPanel = new DeckSelectionTest(); // Initialize the deck selection panel
 
         jMenu1.setText("jMenu1");
 
@@ -92,14 +93,14 @@ public class Homepage extends JPanel {
                                                 .addGap(113, 113, 113)
                                                 .addComponent(leaderButton))
                                         .addComponent(title)
-                                        .addComponent(deckSelectionPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))) // Add the deck selection panel here
+                                        //.addComponent(deckSelectionPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))) // Add the deck selection panel here
                         .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGap(328, 328, 328)
                                 .addComponent(confirmButton))
                         .addGroup(mainPanelLayout.createSequentialGroup()
                                 .addGap(311, 311, 311)
                                 .addComponent(titleEnterUser))
-        );
+        )));
         mainPanelLayout.setVerticalGroup(
                 mainPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(mainPanelLayout.createSequentialGroup()
@@ -112,7 +113,7 @@ public class Homepage extends JPanel {
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(confirmButton)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(deckSelectionPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE) // And in the vertical layout
+                                //.addComponent(deckSelectionPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE) // And in the vertical layout
                                 .addGap(46, 46, 46)
                                 .addGroup(mainPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(leaderButton)
@@ -121,12 +122,12 @@ public class Homepage extends JPanel {
         );
     }
 
-    public static void main(String[] args) { // Test
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new Homepage());
-        frame.pack();
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args) { // Test
+//        JFrame frame = new JFrame();
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.add(new Homepage());
+//        frame.pack();
+//        frame.setVisible(true);
+//    }
 }
 
